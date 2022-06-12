@@ -61,12 +61,13 @@ function login(string $email, string $password): int
     $stmt->execute([$email, $password]);
     return $stmt->rowCount();
 }
-function getSession(string $email): int
+function getSession(string $email): void
 {
     global $pdo;
     $stmt = $pdo->prepare("SELECT admin FROM users WHERE email = ?");
-    $admin = $stmt->execute([$email]);
-    return $admin;
+    $stmt->execute([$email]);
+    $array = $stmt->fetch();
+    $_SESSION['admin_session'] = $array['admin'];
 }
 
 function add_to_cart($product): void

@@ -5,12 +5,16 @@ require_once __DIR__ . '/inc/db.php';
 require_once __DIR__ . '/inc/funcs.php';
 $products = get_products();
 $users = get_users();
-if ($_SESSION['admin_session'] == -1){
-    header("Location: loginpage.php");
+if($_SESSION['admin_session'] == 1){
+    header("Location: /noaccess.php");
+    die;
 }
-elseif ($_SESSION['admin_session'] == 0){
-    header("Location: noaccess.php");
+if($_SESSION['admin_session'] < 1){
+    header("Location: /loginpage.php");
+    die;
 }
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,7 +33,7 @@ elseif ($_SESSION['admin_session'] == 0){
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="index.php">Музыкальный магазин</a>
+        <a class="navbar-brand" href="catalog.php">Музыкальный магазин</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +43,8 @@ elseif ($_SESSION['admin_session'] == 0){
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a href="logout.php">Выйти</a>
+                    <input type=button class="btn btn-primary" onClick="location.href='logout.php'"
+                           value='Выход'>
                 </li>
 
             </ul>
@@ -81,7 +86,7 @@ elseif ($_SESSION['admin_session'] == 0){
                     <th>Id</th>
                     <th>E-mail</th>
                     <th>Пароль</th>
-                    <th>Статус администратора</th>
+                    <th>Статус</th>
                     <th></th>
                 </tr>
                 <?php foreach($users as $u): ?>

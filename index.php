@@ -22,9 +22,6 @@ $products = get_products();
     <title>Музыкальный магазин</title>
 </head>
 <body>
-<a href="admin.php">admin</a>
-<a href="add_product.php">add</a>
-<a href="loginpage.php">login</a>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="#">Музыкальный магазин</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -48,7 +45,6 @@ $products = get_products();
     </div>
 </nav>
 
-<?php //debug($_SESSION); //session_destroy(); ?>
 
 <div class="wrapper mt-5">
     <div class="container">
@@ -71,25 +67,24 @@ $products = get_products();
 
                                     <?= $product['price'] ?> грн.
                                 </div>
-                                <a href="?cart=add&id=<?= $product['id'] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $product['id'] ?>">
+                                <a href="loginpage.php" class="btn btn-info btn-block">
                                     <i class="fas fa-cart-arrow-down"></i> Купить
                                 </a>
                                 <div class="item-status"><i class="fas fa-check text-success"></i> В наличии</div>
                             </div>
-                        </div><!-- /product-card -->
+                        </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
 
-            </div><!-- /product-cards -->
+            </div>
 
-        </div><!-- /row -->
+        </div>
 
 
 
-    </div><!-- /container -->
-</div><!-- /wrapper -->
+    </div>
+</div>
 
-<!-- Modal -->
 <div class="modal fade cart-modal" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">

@@ -12,18 +12,19 @@ if(!empty($_GET['submit'])) {
     if (!empty($_GET['email']) && !empty($_GET['password'])) {
         $email = $_GET['email'];
         $password = $_GET['password'];
-        $_SESSION['admin_session'] = getSession($email);
+        getSession($email);
         if (login($email, $password) == 1) {
             header("Location: /catalog.php");
             die;
         }
 
-    } else {
-        echo 'Неверный логин/пароль';
+        else {
+            echo 'Неверный логин/пароль';
+        }
     }
-}
+
 
     else{
         echo 'Заполните все поля!';
     }
-
+}

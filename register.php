@@ -10,7 +10,7 @@ if(!empty($_GET['submit'])){
     if(!empty($_GET['email']) && !empty($_GET['password'])){
         $email = $_GET['email'];
         $password = $_GET['password'];
-        add_user($email, $password, 0);
+        add_user($email, $password, 1);
         header("Location: /loginpage.php");
         die;
     }

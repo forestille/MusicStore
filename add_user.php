@@ -23,7 +23,7 @@ $users = get_users();
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="index.php">Музыкальный магазин</a>
+    <a class="navbar-brand" href="catalog.php">Музыкальный магазин</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,9 +33,8 @@ $users = get_users();
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-                <button type="button" class="btn btn-primary">
-                    Вход
-                </button>
+                <input type=button class="btn btn-primary" onClick="location.href='logout.php'"
+                       value='Выход'>
             </li>
 
         </ul>
@@ -47,7 +46,7 @@ $users = get_users();
     <form action="insert_user.php" method="get">
         <label>E-mail: </label><input type="text" name="email"><br><br>
         <label>Пароль: </label><input type="text" name="password"><br><br>
-        <label>Статус администратора: </label><input type="number" name="admin"><br><br>
+        <label>Статус: </label><input type="number" name="admin"><br><br>
         <button type="submit" name="submit" value="add">Добавить</button>
     </form>
 </div>

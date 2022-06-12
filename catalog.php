@@ -23,9 +23,6 @@ $products = get_products();
     <title>Музыкальный магазин</title>
 </head>
 <body>
-<a href="admin.php">admin</a>
-<a href="add_product.php">add</a>
-<a href="loginpage.php">login</a>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="#">Музыкальный магазин</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -36,7 +33,7 @@ $products = get_products();
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <input type=button class="btn btn-primary" data-toggle="modal" onClick="location.href='logout.php'"
+                <input type=button class="btn btn-primary" onClick="location.href='logout.php'"
                        value='Выход'>
             </li>
             <li class="nav-item">

@@ -33,7 +33,8 @@ $users = get_users();
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-                <a href="logout.php">Выйти</a>
+                <input type=button class="btn btn-primary" onClick="location.href='logout.php'"
+                       value='Выход'>
             </li>
 
         </ul>
@@ -41,7 +42,8 @@ $users = get_users();
     </div>
 </nav>
 
-<a>У вас нет доступа к этому разделу сайта.</a>
+<a>У вас нет доступа к этому разделу сайта.</a><br>
+<a href="catalog.php">Вернуться на главную</a>
 
 
 
